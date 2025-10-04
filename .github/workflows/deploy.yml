@@ -15,17 +15,19 @@
           - name: Setup Node.js
             uses: actions/setup-node@v3
             with:
-              node-version: '22' # Or your preferred Node.js version
+              node-version: '20' # Use Node.js 20 for better npm compatibility
 
           - name: Install dependencies
-            run: npm install
+            run: npm ci # Use ci for faster, more reliable installs
 
           - name: Build Eleventy
-            run: npm run build # Or your custom build command
+            run: npm run build
 
           - name: Deploy to GitHub Pages
             uses: peaceiris/actions-gh-pages@v3
+            if: success() # Only deploy if build succeeded
             with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
-              publish_dir: ./_site # Your Eleventy output directory
+              publish_dir: ./_site
               publish_branch: gh-pages
+              force_orphan: true # Ensure clean deployment
