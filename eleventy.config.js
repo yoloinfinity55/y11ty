@@ -13,6 +13,9 @@ export default function(eleventyConfig) {
   // Configure filters
   configureFilters(eleventyConfig);
 
+  // Add XML as a template format
+  eleventyConfig.addTemplateFormats("xml");
+
   return {
     dir: {
       input: "src",
