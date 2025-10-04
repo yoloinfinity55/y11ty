@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+/* Import CSS modules */
+@import './components/buttons.css';
+@import './utilities/typography.css';
+@import './utilities/animations.css';
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-secondary: #8b5cf6;
+
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

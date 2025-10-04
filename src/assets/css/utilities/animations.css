@@ -1,0 +1,14 @@
+/* Layout Utilities */
+.container-custom {
+  @apply max-w-4xl mx-auto px-4;
+}
+
+/* Animation */
+.fade-in {
+  @apply opacity-0 animate-fade-in;
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
