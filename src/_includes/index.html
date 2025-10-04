@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}Y11ty Blog</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-4xl mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold text-gray-900">
+                <a href="/" class="text-primary hover:text-gray-700 transition-colors">Y11ty Blog</a>
+            </h1>
+            <p class="text-gray-600 mt-2">A modern blog built with Eleventy & Tailwind CSS</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        {{ content | safe }}
+    </main>
+
+    <footer class="bg-white border-t mt-16">
+        <div class="max-w-4xl mx-auto px-4 py-8 text-center text-gray-600">
+            <p>&copy; 2025 Y11ty Blog. Built with <a href="https://www.11ty.dev/" class="text-primary hover:underline">Eleventy</a> & <a href="https://tailwindcss.com/" class="text-primary hover:underline">Tailwind CSS</a></p>
+        </div>
+    </footer>
+</body>
+</html>
