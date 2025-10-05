@@ -5,125 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Y11ty Blog</title>
     <link rel="stylesheet" href="/assets/css/main.css">
-</head>
-<body class="min-h-screen bg-gray-50">
-    <header class="bg-white shadow-sm border-b">
-        <div class="max-w-4xl mx-auto px-4 py-6">
-            <h1 class="text-3xl font-bold text-gray-900">
-                <a href="/" class="text-primary hover:text-gray-700 transition-colors">Y11ty Blog</a>
-            </h1>
-            <p class="text-gray-600 mt-2">A modern blog built with Eleventy & Tailwind CSS</p>
-        </div>
-    </header>
+    <script>
+        // Dark mode toggle functionality
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        }
 
-    <main class="max-w-4xl mx-auto px-4 py-8">
-        <h1>Welcome to Y11ty Blog</h1>
-<p>This is a modern blog built with <a href="https://www.11ty.dev/">Eleventy</a> and <a href="https://tailwindcss.com/">Tailwind CSS</a>. It's designed to be fast, responsive, and easy to customize.</p>
-<h2>Latest Posts</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<p><article class="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow">
+        // Initialize dark mode from localStorage
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-gray-900 dark:text-white hover:text-primary transition-colors">
+                        Y11ty Blog
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium text-primary">Home</a>
+                    <a href="/about" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium ">About</a>
+                    <a href="/blog" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium ">Blog</a>
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button onclick="toggleDarkMode()" title="Toggle dark mode" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path class="dark:hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        <path class="hidden dark:block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<p><article class="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow dark:bg-gray-800 dark:border-gray-700">
 <h2 class="text-xl font-bold mb-2">
-<a href="/content/posts/2025/01/project-overview/" class="text-gray-900 hover:text-primary transition-colors">Y11ty - Eleventy Blog with Tailwind CSS</a>
-</h2>
-<p class="text-gray-600 text-sm mb-3">
-Posted on October 4, 2025</p>
-<p>• Tagged: <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">posts</span></p>
-<p></p></p>
-<p><p class="text-gray-700 leading-relaxed text-sm">
+<a href="
+/content/posts/2025/project-overview/" class="text-gray-900 dark:text-white hover:text-primary transition-colors">
 Y11ty - Eleventy Blog with Tailwind CSS
-A modern static blog built with Eleventy (11ty) and Tailwind CSS.
-Features</p>
-<p>⚡ Fast static site generation with...
+</a>
+</h2>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">
+Posted on
+October 4, 2025
+{% if post.data.tags %}
+• Tagged:
+{% for tag in post.data.tags %}
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1"></p>
+<p></span>
+{% endfor %}
+{% endif %}
 </p>
-<a href="/content/posts/2025/01/project-overview/" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
+{% if post.data.description %}
+<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3"></p>
+<p></p>
+{% endif %}
+<a href="
+/content/posts/2025/project-overview/" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
 Read more →
 </a>
 </article></p>
-<p><article class="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow">
+<p><article class="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow dark:bg-gray-800 dark:border-gray-700">
 <h2 class="text-xl font-bold mb-2">
-<a href="/content/posts/2025/01/responsive-tailwind/" class="text-gray-900 hover:text-primary transition-colors">Building Responsive Websites with Tailwind CSS</a>
-</h2>
-<p class="text-gray-600 text-sm mb-3">
-Posted on January 19, 2025</p>
-<p>• Tagged: <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">posts</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">tailwind-css</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">responsive-design</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">css</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">frontend</span></p>
-<p></p></p>
-<p><p class="text-gray-700 leading-relaxed mb-3">Master responsive design principles and create beautiful, mobile-first websites using Tailwind CSS utility classes.</p></p>
-<p><p class="text-gray-700 leading-relaxed text-sm">
+<a href="
+/content/posts/2025/responsive-tailwind/" class="text-gray-900 dark:text-white hover:text-primary transition-colors">
 Building Responsive Websites with Tailwind CSS
-Responsive design is crucial for modern web development. With users accessing websites from various dev...
+</a>
+</h2>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">
+Posted on
+January 19, 2025
+{% if post.data.tags %}
+• Tagged:
+{% for tag in post.data.tags %}
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1"></p>
+<p></span>
+{% endfor %}
+{% endif %}
 </p>
-<a href="/content/posts/2025/01/responsive-tailwind/" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
+{% if post.data.description %}
+<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+Master responsive design principles and create beautiful, mobile-first websites using Tailwind CSS utility classes.
+</p>
+{% endif %}
+<a href="
+/content/posts/2025/responsive-tailwind/" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
 Read more →
 </a>
 </article></p>
-<p><article class="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow">
+<p><article class="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow dark:bg-gray-800 dark:border-gray-700">
 <h2 class="text-xl font-bold mb-2">
-<a href="/content/posts/2025/01/getting-started-eleventy/" class="text-gray-900 hover:text-primary transition-colors">Getting Started with Eleventy and Modern Web Development</a>
-</h2>
-<p class="text-gray-600 text-sm mb-3">
-Posted on January 14, 2025</p>
-<p>• Tagged: <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">posts</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">eleventy</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">web-development</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">static-sites</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">tutorial</span></p>
-<p></p></p>
-<p><p class="text-gray-700 leading-relaxed mb-3">Learn how to build fast, modern websites with Eleventy static site generator and best practices for web development.</p></p>
-<p><p class="text-gray-700 leading-relaxed text-sm">
+<a href="
+/content/posts/2025/getting-started-eleventy/" class="text-gray-900 dark:text-white hover:text-primary transition-colors">
 Getting Started with Eleventy and Modern Web Development
-Eleventy (11ty) is a powerful static site generator that allows you to build fast, modern web...
+</a>
+</h2>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">
+Posted on
+January 14, 2025
+{% if post.data.tags %}
+• Tagged:
+{% for tag in post.data.tags %}
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1"></p>
+<p></span>
+{% endfor %}
+{% endif %}
 </p>
-<a href="/content/posts/2025/01/getting-started-eleventy/" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
+{% if post.data.description %}
+<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+Learn how to build fast, modern websites with Eleventy static site generator and best practices for web development.
+</p>
+{% endif %}
+<a href="
+/content/posts/2025/getting-started-eleventy/" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
 Read more →
 </a>
 </article></p>
 </div>
 <!-- Pagination -->
-<h2>About This Blog</h2>
-<p>This blog is built as a learning project to demonstrate modern web development techniques using static site generation. It features:</p>
-<ul>
-<li>⚡ <strong>Fast Performance</strong>: Static generation for lightning-fast load times</li>
-<li>🎨 <strong>Modern Design</strong>: Clean, responsive layout with Tailwind CSS</li>
-<li>📱 <strong>Mobile-First</strong>: Optimized for all device sizes</li>
-<li>🚀 <strong>Easy Deployment</strong>: Ready for GitHub Pages and other static hosts</li>
-<li>📝 <strong>Markdown Support</strong>: Easy content creation with Markdown</li>
-<li>🔍 <strong>SEO Optimized</strong>: Proper meta tags and structured data</li>
-<li>📄 <strong>RSS Feed</strong>: Subscribe to new posts</li>
-<li>📖 <strong>Pagination</strong>: Browse through posts easily</li>
-</ul>
-<h2>Recent Posts</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-<p><div class="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow">
-<h3 class="font-semibold mb-2">
-<a href="/content/posts/2025/01/project-overview/" class="text-gray-900 hover:text-primary transition-colors">Y11ty - Eleventy Blog with Tailwind CSS</a>
-</h3>
-<p class="text-sm text-gray-600 mb-2">October 4, 2025</p></p>
-<p></div></p>
-<p><div class="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow">
-<h3 class="font-semibold mb-2">
-<a href="/content/posts/2025/01/responsive-tailwind/" class="text-gray-900 hover:text-primary transition-colors">Building Responsive Websites with Tailwind CSS</a>
-</h3>
-<p class="text-sm text-gray-600 mb-2">January 19, 2025</p></p>
-<p><p class="text-sm text-gray-700">Master responsive design principles and create beautiful, mobile-first websites using Tailwind CSS u...</p></p>
-<p></div></p>
-<p><div class="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow">
-<h3 class="font-semibold mb-2">
-<a href="/content/posts/2025/01/getting-started-eleventy/" class="text-gray-900 hover:text-primary transition-colors">Getting Started with Eleventy and Modern Web Development</a>
-</h3>
-<p class="text-sm text-gray-600 mb-2">January 14, 2025</p></p>
-<p><p class="text-sm text-gray-700">Learn how to build fast, modern websites with Eleventy static site generator and best practices for ...</p></p>
-<p></div></p>
-</div>
-<h2>Getting Started</h2>
-<p>To run this blog locally:</p>
-<ol>
-<li>Clone the repository</li>
-<li>Install dependencies with <code>npm install</code></li>
-<li>Start development server with <code>npm run dev</code></li>
-<li>View at <code>http://localhost:8080</code></li>
-</ol>
-<p>The blog is automatically deployed to GitHub Pages when changes are pushed to the main branch.</p>
 
     </main>
 
-    <footer class="bg-white border-t mt-16">
-        <div class="max-w-4xl mx-auto px-4 py-8 text-center text-gray-600">
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+        <div class="max-w-6xl mx-auto px-4 py-8 text-center text-gray-600 dark:text-gray-400">
             <p>&copy; 2025 Y11ty Blog. Built with <a href="https://www.11ty.dev/" class="text-primary hover:underline">Eleventy</a> & <a href="https://tailwindcss.com/" class="text-primary hover:underline">Tailwind CSS</a></p>
         </div>
     </footer>
