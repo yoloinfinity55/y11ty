@@ -24,15 +24,19 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yoloinfinity55/y11ty.git"
+    "url": "git+https://github.com/yoloinfinity55/y11ty.git"
   },
   "engines": {
     "node": ">=18.0.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "eleventy-plugin-tailwindcss-4": "^2.0.1",
     "tailwindcss": "^4.1.14"
-  }
+  },
+  "main": ".eleventy.js",
+  "bugs": {
+    "url": "https://github.com/yoloinfinity55/y11ty/issues"
+  },
+  "homepage": "https://github.com/yoloinfinity55/y11ty#readme"
 }
