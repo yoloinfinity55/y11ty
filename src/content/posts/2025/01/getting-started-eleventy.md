@@ -2,7 +2,7 @@
 title: Getting Started with Eleventy and Modern Web Development
 description: Learn how to build fast, modern websites with Eleventy static site generator and best practices for web development.
 date: 2025-01-15
-tags: [eleventy, web-development, static-sites, tutorial]
+tags: [posts, eleventy, web-development, static-sites, tutorial]
 layout: layouts/post.html
 ---
 

@@ -12,28 +12,30 @@ This is a modern blog built with [Eleventy](https://www.11ty.dev/) and [Tailwind
 
 ## Latest Posts
 
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 {% for post in posts %}
-<article class="bg-white rounded-lg shadow-sm border p-6 mb-6 hover:shadow-md transition-shadow">
-    <h2 class="text-2xl font-bold mb-2">
-        <a href="{{ post.url }}" class="text-gray-900 hover:text-primary transition-colors">{{ post.data.title }}</a>
-    </h2>
-    <p class="text-gray-600 text-sm mb-3">
-        Posted on {{ post.date | date: "%B %d, %Y" }}
-        {% if post.data.tags %}
-        • Tagged: {% for tag in post.data.tags %}<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">{{ tag }}</span>{% endfor %}
+    <article class="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow">
+        <h2 class="text-xl font-bold mb-2">
+            <a href="{{ post.url }}" class="text-gray-900 hover:text-primary transition-colors">{{ post.data.title }}</a>
+        </h2>
+        <p class="text-gray-600 text-sm mb-3">
+            Posted on {{ post.date | date: "%B %d, %Y" }}
+            {% if post.data.tags %}
+            • Tagged: {% for tag in post.data.tags %}<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">{{ tag }}</span>{% endfor %}
+            {% endif %}
+        </p>
+        {% if post.data.description %}
+        <p class="text-gray-700 leading-relaxed mb-3">{{ post.data.description }}</p>
         {% endif %}
-    </p>
-    {% if post.data.description %}
-    <p class="text-gray-700 leading-relaxed mb-3 italic">{{ post.data.description }}</p>
-    {% endif %}
-    <p class="text-gray-700 leading-relaxed">
-        {{ post.templateContent | striptags | truncate: 250 }}
-    </p>
-    <a href="{{ post.url }}" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
-        Read more →
-    </a>
-</article>
+        <p class="text-gray-700 leading-relaxed text-sm">
+            {{ post.templateContent | striptags | truncate: 150 }}
+        </p>
+        <a href="{{ post.url }}" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
+            Read more →
+        </a>
+    </article>
 {% endfor %}
+</div>
 
 <!-- Pagination -->
 {% if pagination.pages.length > 1 %}
@@ -46,7 +48,7 @@ This is a modern blog built with [Eleventy](https://www.11ty.dev/) and [Tailwind
         {% endif %}
 
         {% for pageEntry in pagination.pages %}
-        <a href="{{ pageEntry.href }}" class="px-4 py-2 text-sm font-medium {% if pageEntry.number === pagination.pageNumber %}text-white bg-primary border border-primary{% else %}text-gray-500 bg-white border border-gray-300 hover:bg-gray-50{% endif %} rounded-md">
+        <a href="{{ pageEntry.href }}" class="px-4 py-2 text-sm font-medium {% if pageEntry.number == pagination.pageNumber %}text-white bg-primary border border-primary{% else %}text-gray-500 bg-white border border-gray-300 hover:bg-gray-50{% endif %} rounded-md">
             {{ pageEntry.number }}
         </a>
         {% endfor %}

@@ -2,7 +2,7 @@
 title: Building Responsive Websites with Tailwind CSS
 description: Master responsive design principles and create beautiful, mobile-first websites using Tailwind CSS utility classes.
 date: 2025-01-20
-tags: [tailwind-css, responsive-design, css, frontend]
+tags: [posts, tailwind-css, responsive-design, css, frontend]
 layout: layouts/post.html
 ---
 

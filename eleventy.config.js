@@ -16,6 +16,9 @@ export default function(eleventyConfig) {
   // Add XML as a template format
   eleventyConfig.addTemplateFormats("xml");
 
+  // Ignore root README.md file
+  eleventyConfig.ignores.add("README.md");
+
   return {
     dir: {
       input: "src",

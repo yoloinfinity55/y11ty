@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Y11ty Blog</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body class="min-h-screen bg-gray-50">
     <header class="bg-white shadow-sm border-b">
@@ -20,6 +20,61 @@
         <h1>Welcome to Y11ty Blog</h1>
 <p>This is a modern blog built with <a href="https://www.11ty.dev/">Eleventy</a> and <a href="https://tailwindcss.com/">Tailwind CSS</a>. It's designed to be fast, responsive, and easy to customize.</p>
 <h2>Latest Posts</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<p><article class="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow">
+<h2 class="text-xl font-bold mb-2">
+<a href="/content/posts/2025/01/project-overview/" class="text-gray-900 hover:text-primary transition-colors">Y11ty - Eleventy Blog with Tailwind CSS</a>
+</h2>
+<p class="text-gray-600 text-sm mb-3">
+Posted on October 4, 2025</p>
+<p>• Tagged: <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">posts</span></p>
+<p></p></p>
+<p><p class="text-gray-700 leading-relaxed text-sm">
+Y11ty - Eleventy Blog with Tailwind CSS
+A modern static blog built with Eleventy (11ty) and Tailwind CSS.
+Features</p>
+<p>⚡ Fast static site generation with...
+</p>
+<a href="/content/posts/2025/01/project-overview/" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
+Read more →
+</a>
+</article></p>
+<p><article class="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow">
+<h2 class="text-xl font-bold mb-2">
+<a href="/content/posts/2025/01/responsive-tailwind/" class="text-gray-900 hover:text-primary transition-colors">Building Responsive Websites with Tailwind CSS</a>
+</h2>
+<p class="text-gray-600 text-sm mb-3">
+Posted on January 19, 2025</p>
+<p>• Tagged: <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">posts</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">tailwind-css</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">responsive-design</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">css</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">frontend</span></p>
+<p></p></p>
+<p><p class="text-gray-700 leading-relaxed mb-3">Master responsive design principles and create beautiful, mobile-first websites using Tailwind CSS utility classes.</p></p>
+<p><p class="text-gray-700 leading-relaxed text-sm">
+Building Responsive Websites with Tailwind CSS
+Responsive design is crucial for modern web development. With users accessing websites from various dev...
+</p>
+<a href="/content/posts/2025/01/responsive-tailwind/" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
+Read more →
+</a>
+</article></p>
+<p><article class="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow">
+<h2 class="text-xl font-bold mb-2">
+<a href="/content/posts/2025/01/getting-started-eleventy/" class="text-gray-900 hover:text-primary transition-colors">Getting Started with Eleventy and Modern Web Development</a>
+</h2>
+<p class="text-gray-600 text-sm mb-3">
+Posted on January 14, 2025</p>
+<p>• Tagged: <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">posts</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">eleventy</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">web-development</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">static-sites</span><span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mx-1">tutorial</span></p>
+<p></p></p>
+<p><p class="text-gray-700 leading-relaxed mb-3">Learn how to build fast, modern websites with Eleventy static site generator and best practices for web development.</p></p>
+<p><p class="text-gray-700 leading-relaxed text-sm">
+Getting Started with Eleventy and Modern Web Development
+Eleventy (11ty) is a powerful static site generator that allows you to build fast, modern web...
+</p>
+<a href="/content/posts/2025/01/getting-started-eleventy/" class="inline-flex items-center text-primary hover:text-primary-dark font-medium mt-3">
+Read more →
+</a>
+</article></p>
+</div>
+<!-- Pagination -->
 <h2>About This Blog</h2>
 <p>This blog is built as a learning project to demonstrate modern web development techniques using static site generation. It features:</p>
 <ul>
@@ -28,14 +83,40 @@
 <li>📱 <strong>Mobile-First</strong>: Optimized for all device sizes</li>
 <li>🚀 <strong>Easy Deployment</strong>: Ready for GitHub Pages and other static hosts</li>
 <li>📝 <strong>Markdown Support</strong>: Easy content creation with Markdown</li>
+<li>🔍 <strong>SEO Optimized</strong>: Proper meta tags and structured data</li>
+<li>📄 <strong>RSS Feed</strong>: Subscribe to new posts</li>
+<li>📖 <strong>Pagination</strong>: Browse through posts easily</li>
 </ul>
+<h2>Recent Posts</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+<p><div class="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow">
+<h3 class="font-semibold mb-2">
+<a href="/content/posts/2025/01/project-overview/" class="text-gray-900 hover:text-primary transition-colors">Y11ty - Eleventy Blog with Tailwind CSS</a>
+</h3>
+<p class="text-sm text-gray-600 mb-2">October 4, 2025</p></p>
+<p></div></p>
+<p><div class="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow">
+<h3 class="font-semibold mb-2">
+<a href="/content/posts/2025/01/responsive-tailwind/" class="text-gray-900 hover:text-primary transition-colors">Building Responsive Websites with Tailwind CSS</a>
+</h3>
+<p class="text-sm text-gray-600 mb-2">January 19, 2025</p></p>
+<p><p class="text-sm text-gray-700">Master responsive design principles and create beautiful, mobile-first websites using Tailwind CSS u...</p></p>
+<p></div></p>
+<p><div class="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow">
+<h3 class="font-semibold mb-2">
+<a href="/content/posts/2025/01/getting-started-eleventy/" class="text-gray-900 hover:text-primary transition-colors">Getting Started with Eleventy and Modern Web Development</a>
+</h3>
+<p class="text-sm text-gray-600 mb-2">January 14, 2025</p></p>
+<p><p class="text-sm text-gray-700">Learn how to build fast, modern websites with Eleventy static site generator and best practices for ...</p></p>
+<p></div></p>
+</div>
 <h2>Getting Started</h2>
 <p>To run this blog locally:</p>
 <ol>
 <li>Clone the repository</li>
 <li>Install dependencies with <code>npm install</code></li>
-<li>Build with <code>npm run build</code></li>
-<li>Serve the <code>_site</code> folder with your preferred static file server</li>
+<li>Start development server with <code>npm run dev</code></li>
+<li>View at <code>http://localhost:8080</code></li>
 </ol>
 <p>The blog is automatically deployed to GitHub Pages when changes are pushed to the main branch.</p>
 

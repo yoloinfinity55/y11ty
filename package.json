@@ -3,16 +3,22 @@
   "version": "1.0.0",
   "description": "A modern blog built with Eleventy and Tailwind CSS",
   "main": "index.js",
-  "scripts": {
-    "build": "npx @11ty/eleventy",
-    "serve": "npx @11ty/eleventy --serve",
-    "dev": "npx @11ty/eleventy --serve --watch",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
-    "clean": "rm -rf _site",
+"scripts": {
+  "build": "eleventy",
+  "serve": "eleventy --serve",
+  "dev": "eleventy --serve --watch",
+  "debug": "DEBUG=Eleventy* eleventy --serve",
+  "clean": "rm -rf _site",
     "build:clean": "npm run clean && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["eleventy", "11ty", "blog", "static-site", "tailwindcss"],
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "blog",
+    "static-site",
+    "tailwindcss"
+  ],
   "author": "Y11ty Blog",
   "license": "ISC",
   "type": "module",
@@ -21,10 +27,10 @@
     "url": "https://github.com/yoloinfinity55/y11ty.git"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
     "autoprefixer": "^10.4.21"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
     "@tailwindcss/postcss": "^4.1.14",
     "eleventy-plugin-tailwindcss-4": "^2.0.1",
     "postcss": "^8.5.6",
