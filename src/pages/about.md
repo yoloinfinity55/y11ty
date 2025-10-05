@@ -1,6 +1,7 @@
 ---
 title: About
-layout: layout.njk
+description: Learn more about our blog and technology stack
+layout: layouts/base.njk
 ---
 
 # About Y11ty Blog

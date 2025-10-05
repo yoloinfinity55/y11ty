@@ -1,0 +1,28 @@
+---
+title: Home
+description: Welcome to our blog
+layout: layouts/base.njk
+---
+
+<section class="mb-16">
+  <h2 class="text-3xl font-bold text-gray-900 mb-8">Latest Posts</h2>
+  
+  {% set posts = collections.posts | reverse %}
+  {% include "components/post-list.njk" %}
+</section>
+
+<section class="bg-gray-50 rounded-lg p-8">
+  <h2 class="text-2xl font-bold text-gray-900 mb-4">About This Blog</h2>
+  <p class="text-gray-600 mb-4">
+    This is a modern blog built with Eleventy and Tailwind CSS. It features a clean, responsive design
+    that looks great on all devices.
+  </p>
+  <div class="flex flex-wrap gap-4">
+    <a href="/pages/about/" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+      Learn More
+    </a>
+    <a href="/pages/contact/" class="bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition-colors">
+      Get in Touch
+    </a>
+  </div>
+</section>

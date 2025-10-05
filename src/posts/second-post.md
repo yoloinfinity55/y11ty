@@ -1,7 +1,7 @@
 ---
 title: Building Modern Web Applications with React
 date: 2025-01-20
-tags: [react, javascript, frontend, web-development]
+tags: [post,react, javascript, frontend, web-development]
 ---
 
 # Building Modern Web Applications with React

@@ -1,7 +1,7 @@
 ---
 title: The Future of Web Development
 date: 2025-01-25
-tags: [future, web-development, trends, technology]
+tags: [post,future, web-development, trends, technology]
 ---
 
 # The Future of Web Development

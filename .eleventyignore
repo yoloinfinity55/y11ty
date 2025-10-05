@@ -1,0 +1,7 @@
+node_modules/
+npm-debug.log
+_site/
+.DS_Store
+*.log
+.netlify/
+.vercel/

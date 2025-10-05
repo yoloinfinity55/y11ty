@@ -1,7 +1,7 @@
 ---
 title: Getting Started with Static Site Generators
 date: 2025-01-15
-tags: [web-development, static-sites, eleventy]
+tags: [post,web-development, static-sites, eleventy]
 ---
 
 # Getting Started with Static Site Generators
