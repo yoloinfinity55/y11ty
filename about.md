@@ -1,6 +1,6 @@
 ---
 title: About
-layout: layouts/index.html
+layout: layout.njk
 ---
 
 # About Y11ty Blog
