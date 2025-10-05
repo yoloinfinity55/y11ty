@@ -2,38 +2,37 @@
   "name": "y11ty",
   "version": "1.0.0",
   "description": "A modern blog built with Eleventy and Tailwind CSS",
-  "main": "index.js",
-"scripts": {
-  "build": "eleventy",
-  "serve": "eleventy --serve",
-  "dev": "eleventy --serve --watch",
-  "debug": "DEBUG=Eleventy* eleventy --serve",
-  "clean": "rm -rf _site",
-    "build:clean": "npm run clean && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve --watch",
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "start": "npm run dev",
+    "clean": "rm -rf _site",
+    "build:production": "npm run clean && eleventy",
+    "debug": "DEBUG=Eleventy* eleventy --serve"
   },
   "keywords": [
     "eleventy",
     "11ty",
     "blog",
     "static-site",
-    "tailwindcss"
+    "tailwindcss",
+    "jamstack"
   ],
   "author": "Y11ty Blog",
   "license": "ISC",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/yoloinfinity55/y11ty.git"
   },
-  "dependencies": {
-    "autoprefixer": "^10.4.21"
+  "engines": {
+    "node": ">=18.0.0"
   },
+  "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@tailwindcss/postcss": "^4.1.14",
     "eleventy-plugin-tailwindcss-4": "^2.0.1",
-    "postcss": "^8.5.6",
     "tailwindcss": "^4.1.14"
   }
 }
